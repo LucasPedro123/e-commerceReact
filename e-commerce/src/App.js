@@ -1,11 +1,11 @@
 import React from "react";
-import {Content} from "./Content"
+import {Routes} from "./Routes";
 
 function App() {
   return (
-    <div className="App">
-      <Content />
-    </div>
+    <>
+      <Routes />
+    </>
   );
 }
 
