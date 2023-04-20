@@ -2,12 +2,13 @@ import { useContext } from "react";
 import {CarrinhoContexto} from "../Context/CarrinhoContexto";
 
 function Carrinho(){
-    
+
     const {produtos, setData} = useContext(CarrinhoContexto);
 
     return(
         <>
             <div>
+                <h1>Carrinho</h1>
                 {
                     produtos.map((e)=>{
                         return (

@@ -4,22 +4,22 @@ import {Store} from "./Pages/Store";
 import {Error404} from './Pages/Error404';
 import {CarrinhoContextoProvider} from "./Context/CarrinhoContexto";
 import Carrinho from "./Pages/Carrinho";
+import ProductDetails from "./Pages/ProductDetails"
 
 export const Routes = ()=>{
     return (
         <>
-        <Link to="/" exact="true">Store</Link>
-        <Link to="/carrinho" exact="true">Carrinho</Link>
+            <Link to="/" >Store</Link>
+            <Link to="/carrinho" >Carrinho</Link>
 
-
-        <Switch>
-            <CarrinhoContextoProvider>
-                <Route exact path='/' component={Store}/>
-                <Route exact path='/carrinho' component={Carrinho}/>
-                <Route component={Error404} />
-            </CarrinhoContextoProvider>
-        </Switch>
-
+            <Switch>
+                <CarrinhoContextoProvider>
+                    <Route  exact={true} path='/' component={Store}/>
+                    <Route  exact={true} path='/carrinho' component={Carrinho}/>
+                    <Route  exact={true} path='/:id' component={ProductDetails}/>
+                </CarrinhoContextoProvider>
+                    <Route  errorElement={Error404} exact="true"  />
+            </Switch>
         </>
 
         

@@ -2,7 +2,7 @@ import {createContext, useState, useEffect} from "react";
 
 const CarrinhoContexto = createContext();
 
-function CarrinhoContextoProvider( { childre } ){
+function CarrinhoContextoProvider( props ){
     
     const [produtos, setData] = useState([]);
 
@@ -11,7 +11,7 @@ function CarrinhoContextoProvider( { childre } ){
             const url = "https://api.mercadolibre.com/sites/MLB/search?q=celular";
             const response = await fetch(url);  
             const objJson = await response.json()
-            setData(objJson.results)
+            setData(objJson.results);
         } 
         fetchApi();   
     },[])
@@ -22,7 +22,7 @@ function CarrinhoContextoProvider( { childre } ){
 
     return(
         <CarrinhoContexto.Provider value={{produtos, setData}}>
-            {childre}
+            {props.children}
         </CarrinhoContexto.Provider>
     )
 }
