@@ -8,10 +8,10 @@ function CarrinhoContextoProvider( props ){
 
     useEffect(()=> {
         const fetchApi = async ()=>{
-            const url = "https://api.mercadolibre.com/sites/MLB/search?q=celular";
+            const url = 'https://fakestoreapi.com/products';
             const response = await fetch(url);  
             const objJson = await response.json()
-            setData(objJson.results);
+            setData(objJson);
         } 
         fetchApi();   
     },[])

@@ -17,8 +17,8 @@ export const Routes = ()=>{
                     <Route  exact={true} path='/' component={Store}/>
                     <Route  exact={true} path='/carrinho' component={Carrinho}/>
                     <Route  exact={true} path='/:id' component={ProductDetails}/>
+                    <Route  component={Error404} exact={true}  />
                 </CarrinhoContextoProvider>
-                    <Route  errorElement={Error404} exact="true"  />
             </Switch>
         </>
 

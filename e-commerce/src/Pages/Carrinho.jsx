@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import {CarrinhoContexto} from "../Context/CarrinhoContexto";
+import {Link} from 'react-router-dom'
 
 function Carrinho(){
 
@@ -14,7 +15,9 @@ function Carrinho(){
                         return (
                             <div key ={e.id}>
                                 <h4>{e.title}</h4>
-                                <img src={e.thumbnail} alt="" />
+                                <Link to={`/${e.id}`}>
+                                    <img src={e.image} alt="gg" />
+                                </Link>
                                 <h5>R${e.price}</h5>
                             </div>
                         )
