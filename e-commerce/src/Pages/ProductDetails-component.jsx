@@ -42,7 +42,7 @@ export const ProductDetails = (props)=>{
                 Dentro desse botão, estará a função acima descrita.
              */}
             <button onClick={()=> handleClick(product)}>                                 
-                <CartButton/>
+                <BsCart/>
             </button>
 
             { !product &&
