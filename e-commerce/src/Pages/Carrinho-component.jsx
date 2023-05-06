@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState} from "react";
 import {CarrinhoContexto} from "../Context/CarrinhoContexto";
 import {Link} from 'react-router-dom'
-import {BsFillCartCheckFill, BsFillCartPlusFill} from 'react-icons/bs'
+import {getItem} from '../Service/localStorageCart'
 
 export const Carrinho = ()=>{
     
@@ -43,6 +43,7 @@ export const Carrinho = ()=>{
         <>
             <div>
                 <h1>Carrinho</h1>
+                {/* Exibo na tela os itemCart do usuário. */}
                 {
                     cart.map((e)=>{
                         return (
