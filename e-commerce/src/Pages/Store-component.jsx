@@ -11,9 +11,6 @@ export const Store = ()=>{
     const {cart, setCart, handleClick} = useContext(CarrinhoContexto)
 
 
-    
-    // 2)
-    
 
     return (
         <div className="container-Store">
@@ -24,18 +21,16 @@ export const Store = ()=>{
                         return (
                             <div key ={e.id}>
                                 <h4>{e.title}</h4>
-                                <Link to={`/${e.id}`}>
+                                {/* Faço o direcionamento do Link da imagem em /:category/:id. */}
+                                <Link to={`/${e.category}/${e.id}`}>
                                     <img src={e.image} alt="gg" />
                                 </Link>
                                 <h5>R${e.price}</h5>
 
-                                {/*Ao ser clicado o botão, executa a função handleClick(); dando-lhe, também, o "e" como parâmetro*/}
                                 <button onClick={()=> handleClick(e)}>                                 
                                     {
-                                        // Condição de, se os elementos do "ItemCard.id" (carrinho) forem estritamente igual com "e"
-                                        // significa que já tenho o elemento no meu carrinho:
                                         cart.some(itemCart => itemCart.id === e.id)
-                                            // Renderizo o Button CartCheck, se existe.
+                                            // Renderizo o Button CartCheck, se existir elemento.
                                             ? (<BsFillCartCheckFill/>)
                                             // Se não, renderizo Button CartPlus 
                                             : (<BsFillCartPlusFill/>)

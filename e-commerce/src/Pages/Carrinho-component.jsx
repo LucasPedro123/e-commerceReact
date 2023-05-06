@@ -19,8 +19,9 @@ export const Carrinho = ()=>{
         cart.map(itemCart => totalPrice += 0 + itemCart.price)
         // 2.3) E o valor total - conforme mostrado acima - ficará na variável, portanto, fal-
         // tará, apenas, relocar esse valor na variável price (do useState)
-        setPrice(totalPrice)
-        // Sendo assim
+        setPrice(totalPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }))
+        //Obs: uso o .toLocaleString para arrendondar e converter o valor para real o número To-
+        //talPrice.
     }
     // 3) Uso useEffect é para fins de, toda vez que ser montado o component, renderizar o valor 
     // total.
@@ -47,11 +48,12 @@ export const Carrinho = ()=>{
                         return (
                             <div key ={e.id}>
                                 <h4>{e.title}</h4>
-                                <Link to={`/${e.id}`}>
+                                {/* 6) Imprimindo à categoria na rota, se a imagem ser clicada. */}
+                                <Link to={`/${e.category}/${e.id}`}>
                                     <img src={e.image} alt="gg" />
                                 </Link>
                                 <h5>R${e.price}</h5>
-                    {/* 4.3) Botão-remove, este, ao ser clicado, rodará a função. */}
+                                {/* 4.3) Botão-remove, este, ao ser clicado, rodará a função. */}
                                 <button onClick={()=>{handleRemove(e)}}>
                                     Remove
                                 </button>

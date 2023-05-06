@@ -17,8 +17,9 @@ export const Routes = ()=>{
             <Switch>
                 <CarrinhoContextoProvider>
                     <Route  exact={true} path='/' component={Store}/>
-                    <Route  exact={true} path='/:id' component={ProductDetails}/>
-                    <Route  exact={true} path='/carrinho' component={Carrinho}/>
+                    {/* 1) Adicionando categoria do produto na rota */}
+                    <Route  path='/:category/:id' component={ProductDetails}/>
+                    <Route  path='/carrinho' component={Carrinho}/>
                 </CarrinhoContextoProvider>
 
 
