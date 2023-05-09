@@ -5,7 +5,6 @@ import {Error404} from './Pages/Error404-component';
 import {CarrinhoContextoProvider} from "./Context/CarrinhoContexto";
 import {Carrinho} from "./Pages/Carrinho-component";
 import {ProductDetails} from "./Pages/ProductDetails-component"
-import './Styles/index.css'
 
 
 export const Routes = ()=>{

@@ -2,7 +2,7 @@ import {useContext, useEffect} from "react";
 import {BsFillCartCheckFill, BsFillCartPlusFill} from 'react-icons/bs'
 import {CarrinhoContexto} from "../Context/CarrinhoContexto";
 import {Link} from "react-router-dom"
-import '../Styles/Store.css'
+import '../Assets/global.scss'
 
 
 export const Store = ()=>{
