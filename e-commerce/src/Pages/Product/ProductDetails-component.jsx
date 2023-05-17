@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import {CarrinhoContexto} from "../Context/CarrinhoContexto";
-import {Error404} from './Error404-component'
+import {CarrinhoContexto} from "../../Context/CarrinhoContexto";
+import {Error404} from '../Not-found/Error404-component'
 // 1) Importo os ícones do React, para colocá-los no button.
 import {BsFillCartCheckFill, BsFillCartPlusFill} from 'react-icons/bs'
 
@@ -20,7 +20,7 @@ export const ProductDetails = (props)=>{
             { product &&
                 <div>
                     <h1>{product.title}</h1>
-                    <img id="imageProduct"src={product.image} alt=""></img>
+                    <img id="imageProduct"src={product.image} width="30%" alt=""></img>
                     <h5>R${product.price}</h5>
                     <p>{product.description}</p>
                     {/*

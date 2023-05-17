@@ -60,7 +60,7 @@ function CarrinhoContextoProvider( props ){
     
 
     return(
-        <CarrinhoContexto.Provider value={{produtos, setData, cart, setCart, handleClick}}>
+        <CarrinhoContexto.Provider value={{produtos, setData, cart, setCart, handleClick, setItem}}>
                 {props.children}
         </CarrinhoContexto.Provider>
     )

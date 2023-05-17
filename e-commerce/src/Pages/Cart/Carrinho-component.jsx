@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState} from "react";
-import {CarrinhoContexto} from "../Context/CarrinhoContexto";
+import {CarrinhoContexto} from "../../Context/CarrinhoContexto";
 import {Link} from 'react-router-dom'
-import {getItem} from '../Service/localStorageCart'
+import '../../Assets/global.scss'
+
 
 export const Carrinho = ()=>{
     
-    const {cart, setCart, produtos} = useContext(CarrinhoContexto);
+    const {cart, setCart, produtos, setItem} = useContext(CarrinhoContexto);
     // 1) Crio um useState, para reter o total de preços inicial para, depois, ser modificado.
     const [price, setPrice] = useState(0)
     // 2) Faço uma função handlePrice, cujo objetivo é guardar o total dos preços Cart na fun- 
@@ -35,41 +36,45 @@ export const Carrinho = ()=>{
         const filterCart = cart.filter(ItemCart => ItemCart.id !== e.id);
         // 4.2) Exprimo esse array novo, guardando-o, na variável cart.
         setCart(filterCart);
+        setItem('carrinho', filterCart)
         // Obs: eu rodo novamente o total para que este, atualiza.
         handlePrice();
     }
 
     return(
         <>
-            <div>
-                <h1>Carrinho</h1>
-                {/* Exibo na tela os itemCart do usuário. */}
-                {
-                    cart.map((e)=>{
-                        return (
-                            <div key ={e.id}>
-                                <h4>{e.title}</h4>
-                                {/* 6) Imprimindo à categoria na rota, se a imagem ser clicada. */}
-                                <Link to={`/${e.category}/${e.id}`}>
-                                    <img src={e.image} alt="gg" />
-                                </Link>
-                                <h5>R${e.price}</h5>
-                                {/* 4.3) Botão-remove, este, ao ser clicado, rodará a função. */}
-                                <button onClick={()=>{handleRemove(e)}}>
-                                    Remove
-                                </button>
-                            </div>
-                        )
-                    })
-                }
-
-                <div>
-                    {/* 5) Aqui, de maneira simples, apenas faço a exibição desse total dos preços de price. */}
-                    <strong>Total</strong>
-                    <span>{price}</span>
+            <article className="container">
+                <div className="card">
+                    <h1 className="card-title">Carrinho</h1>
+                
+                    {/* Exibo na tela os itemCart do usuário. */}
+                        {
+                            cart.map((e)=>{
+                                return (
+                                    <div className="card-body" key ={e.id}>
+                                        <h4>{e.title}</h4>
+                                        {/* 6) Imprimindo à categoria na rota, se a imagem ser clicada. */}
+                                        <Link to={`/${e.category}/${e.id}`}>
+                                            <img src={e.image}  alt="gg" width="10%"/>
+                                        </Link>
+                                        <h5>R${e.price}</h5>
+                                        {/* 4.3) Botão-remove, este, ao ser clicado, rodará a função. */}
+                                        <button className="btn btn-primary"onClick={()=>{handleRemove(e)}}>
+                                            Remove
+                                        </button>
+                                    </div>
+                                )
+                            })
+                        }
                 </div>
 
-            </div>
+                <div >
+                        {/* 5) Aqui, de maneira simples, apenas faço a exibição desse total dos preços de price. */}
+                        <strong>Total</strong>
+                        <span>{price}</span>
+                </div>
+
+            </article>
         </>
     )
 }
