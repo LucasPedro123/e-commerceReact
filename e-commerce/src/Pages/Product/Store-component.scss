@@ -1,3 +1,36 @@
-h1 {
-    font-size: 40px;
+    // ORGANIZANDO AS DISTRUBUÕES DOS PRODUTOS NA INTERFACE DO USUÁRIO.
+
+.card-body{
+    // 1. Para organizar os elementos escolhi o Flex;
+    display: flex;
+    // 2. Espaçamento entre os elementos;
+    gap: 50px;
+    // 3. Realizará quebra de linha, respeitando a largura e altura do elemento
+    // em questão, com o valor Wrap;
+    flex-wrap: wrap;
+    // 4. Indico que os itens se alinharão no centro;
+    align-items: center;
+    // 5. Indico que o meu MainAxis (meu eixo principal) se alocará no centro.
+    justify-content: center;
 }
+
+.products{
+    // 6. Altura dos produtos (caixas).
+    height: 250px;
+    // 7. Largura dos produtos (caixas).
+    width: 250px;
+    // 8. Digo que os itens desta caixa trabalhará com Flex, isto é, estruturar em colunas;
+    display: flex;
+    // 8.1 Defindo o MainAxis como: column;
+    flex-direction: column;
+    // 9 Aplicando à borda.
+    border: 1px solid black;
+    // 10. Espaçamento entre os itens ou contéudos, dentro da caixa.
+    padding: 20px;
+    // 11. Indico que os itens se alinharão no centro;
+    align-items: center;
+    
+}
+
+
+

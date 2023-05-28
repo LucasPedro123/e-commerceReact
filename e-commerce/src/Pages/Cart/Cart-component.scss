@@ -1,0 +1,13 @@
+
+// Estilização de como os itens vão se dispor na tela do carrinho.
+
+
+.product{
+    height: 320px;
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+    align-items: center;
+}
