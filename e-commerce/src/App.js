@@ -1,29 +1,17 @@
 import React from "react";
 import {Routes} from "./Routes";
-import {Link} from 'react-router-dom';
-
+// 2. Importando o Header.
+import { Header } from "./components/header";
+import "./Assets/global.scss"
 
 function App() {
   return (
     <>
-      <header>
-
-        <div>
-
-          <nav className="nav">
-
-            <ul>
-              <Link className="nav-item"to="/" >Store</Link>
-              <Link className="nav-item"to="/carrinho" >Carrinho</Link>
-            </ul>
-
-          </nav>
-
-        </div>
-
-      </header>
-
+      <Header/>
+      
       <Routes />
+      
+
     </>
   );
 }

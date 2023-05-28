@@ -15,7 +15,10 @@ export const Routes = ()=>{
                 
                 <CarrinhoContextoProvider>
                     <Route  exact={true} path='/' component={Store}/>
-                    <Route  path='/:category/:id' component={ProductDetails}/>
+                    {/* 3. Mudança no destino da rota. Isto porque, foi mudado a Api, ou seja, 
+                        A rota deve se apresentar em consonância com a Api.
+                    */}
+                    <Route  path='/phone/:id' component={ProductDetails}/>
                     <Route  path='/carrinho' component={Carrinho}/>
                 </CarrinhoContextoProvider>
 
